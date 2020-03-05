@@ -15,6 +15,7 @@ async function run() {
     );
     core.debug(releaseResponse);
   } catch (error) {
+    core.debug(error);
     core.setFailed(`${error.message}, ${userName}, ${repoName}, ${process.env.GITHUB_TOKEN}`)
   }
 }
