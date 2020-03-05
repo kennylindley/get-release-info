@@ -1,25 +1,8 @@
 const core = require("@actions/core");
-const { GitHub } = require("@actions/github");
+const fs = require("fs");
 
 function run() {
-  const userName = core.getInput("user_name", {required: true});
-  const repoName = core.getInput("repo_name", {required: true});
-
-
-  try {
-    const github = new GitHub(process.env.GITHUB_TOKEN)
-    core.debug(github);
-    const releaseResponse = github.repos.getLatestRelease(
-      {
-        owner: userName,
-        repo: repoName
-      }
-    );
-    core.debug(releaseResponse);
-  } catch (error) {
-    core.debug(error);
-    core.setFailed(`${error.message}, ${userName}, ${repoName}, ${process.env.GITHUB_TOKEN}`)
-  }
+  log.info(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")));
 }
 
 run();
