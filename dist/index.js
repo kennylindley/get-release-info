@@ -56,6 +56,7 @@ function run() {
     core.setOutput("name", asset.name);
     core.setOutput("url", asset.url);
   });
+  core.setOutput("version", releaseInfo.release.name);
 }
 
 run();
