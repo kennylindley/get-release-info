@@ -5,10 +5,10 @@ function run() {
   const userName = core.getInput("user_name", {required: true});
   const repoName = core.getInput("repo_name", {required: true});
 
-  core.debug(github);
 
   try {
     const github = new GitHub(process.env.GITHUB_TOKEN)
+    core.debug(github);
     const releaseResponse = github.repos.getLatestRelease(
       {
         owner: userName,
