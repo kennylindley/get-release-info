@@ -364,8 +364,10 @@ async function run() {
   try {
     const github = new GitHub(process.env.GITHUB_TOKEN)
     const releaseResponse = await github.repos.getLatestRelease(
-      userName,
-      repoName
+      {
+        owner: userName,
+        repo: repoName
+      }
     );
 
     core.debug(releaseResponse);
