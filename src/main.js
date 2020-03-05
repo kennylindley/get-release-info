@@ -1,13 +1,13 @@
 const core = require("@actions/core");
 const { GitHub } = require("@actions/github");
 
-async function run() {
+function run() {
   const userName = core.getInput("user_name", {required: true});
   const repoName = core.getInput("repo_name", {required: true});
 
   try {
     const github = new GitHub(process.env.GITHUB_TOKEN)
-    const releaseResponse = await github.repos.getLatestRelease(
+    const releaseResponse = github.repos.getLatestRelease(
       {
         owner: userName,
         repo: repoName

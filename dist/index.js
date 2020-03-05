@@ -357,13 +357,13 @@ module.exports._enoent = enoent;
 const core = __webpack_require__(470);
 const { GitHub } = __webpack_require__(469);
 
-async function run() {
+function run() {
   const userName = core.getInput("user_name", {required: true});
   const repoName = core.getInput("repo_name", {required: true});
 
   try {
     const github = new GitHub(process.env.GITHUB_TOKEN)
-    const releaseResponse = await github.repos.getLatestRelease(
+    const releaseResponse = github.repos.getLatestRelease(
       {
         owner: userName,
         repo: repoName
