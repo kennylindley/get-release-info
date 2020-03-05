@@ -50,7 +50,7 @@ const core = __webpack_require__(470);
 const fs = __webpack_require__(747);
 
 function run() {
-  log.info(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")));
+  core.info(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")));
 }
 
 run();

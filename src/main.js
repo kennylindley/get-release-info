@@ -2,7 +2,7 @@ const core = require("@actions/core");
 const fs = require("fs");
 
 function run() {
-  log.info(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")));
+  core.info(JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8")));
 }
 
 run();
