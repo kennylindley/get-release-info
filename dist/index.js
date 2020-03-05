@@ -52,6 +52,10 @@ const fs = __webpack_require__(747);
 function run() {
   core.debug(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
   const releaseInfo = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
+
+  releaseInfo.assets.forEach(asset => {
+    core.setOutput(asset.name, asset.browser_download_url);
+  });
 }
 
 run();
