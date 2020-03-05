@@ -2,8 +2,8 @@ const core = require("@actions/core");
 const { GitHub } = require("@actions/github");
 
 async function run() {
-  const userName = core.getInput("user_name", { required: true });
-  const repoName = core.getInput("repo_name", { required: true });
+  const userName = core.getInput("user_name");
+  const repoName = core.getInput("repo_name");
 
   core.debug(userName, repoName, process.env.GITHUB_TOKEN)
   try {
@@ -14,7 +14,6 @@ async function run() {
         repo: repoName
       }
     );
-
     core.debug(releaseResponse);
   } catch (error) {
     core.setFailed(`${error.message}, ${userName}, ${repoName}, ${process.env.GITHUB_TOKEN}`)
