@@ -55,7 +55,7 @@ function run() {
 
   console.log(releaseInfo);
   releaseInfo.release.assets.forEach(asset => {
-    core.setOutput(asset.name, asset.browser_download_url);
+    console.log(asset.name, asset.browser_download_url)
   });
 }
 
