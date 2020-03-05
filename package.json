@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "description": "Get the info from a release",
-  "main": "src/main.js",
+  "main": "dist/index.js",
   "scripts": {
     "lint": "eslint 'src/**.js' 'tests/**.js' --fix",
     "test": "eslint 'src/**.js' 'tests/**.js' && jest --coverage",
