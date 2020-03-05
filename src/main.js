@@ -5,7 +5,7 @@ async function run() {
   const userName = core.getInput("user_name");
   const repoName = core.getInput("repo_name");
 
-  core.debug(userName, repoName, process.env.GITHUB_TOKEN)
+  core.warning(userName, repoName, process.env.GITHUB_TOKEN)
   try {
     const github = new GitHub(process.env.GITHUB_TOKEN)
     const releaseResponse = await github.repos.getLatestRelease(
