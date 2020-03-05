@@ -358,8 +358,8 @@ const core = __webpack_require__(470);
 const { GitHub } = __webpack_require__(469);
 
 async function run() {
-  const userName = core.getInput("user_name");
-  const repoName = core.getInput("repo_name");
+  const userName = core.getInput("user_name", {required: true});
+  const repoName = core.getInput("repo_name", {required: true});
 
   core.debug(userName, repoName, process.env.GITHUB_TOKEN)
   try {
