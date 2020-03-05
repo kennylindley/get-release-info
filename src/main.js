@@ -2,8 +2,8 @@ const core = require("@actions/core");
 const { GitHub } = require("@actions/github");
 
 async function run() {
-  const userName = core.getInput("user_name");
-  const repoName = core.getInput("repo_name");
+  const userName = core.getInput("user_name", { required: true });
+  const repoName = core.getInput("repo_name", { required: true });
 
   core.warning(userName, repoName, process.env.GITHUB_TOKEN)
   try {
