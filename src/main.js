@@ -5,7 +5,8 @@ function run() {
   const releaseInfo = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
 
   releaseInfo.release.assets.forEach(asset => {
-    console.log(asset.name, asset.browser_download_url)
+    core.setOutput("name", asset.name);
+    core.setOutput("url", asset.url);
   });
 }
 
