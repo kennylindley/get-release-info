@@ -1,0 +1,16 @@
+name: 'Get Release Info'
+description: 'Get info on the release'
+author: 'kennylindley'
+inputs:
+  user_name:
+    description: "The repo owner's username"
+    required: true
+  repo_name:
+    description: "The name of the repo"
+    required: true
+runs:
+  using: 'node12'
+  main: 'src/main.js'
+branding:
+  icon: 'package'
+  color: 'gray-dark'
