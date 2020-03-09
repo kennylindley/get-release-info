@@ -7,12 +7,12 @@ function run() {
   let count = 0;
   let urls = "";
   releaseInfo.release.assets.forEach(asset => {
-    console.log(asset.browser_download_url);
     if (count > 0) {
       urls.concat(",");
     }
     urls.concat(asset.browser_download_url);
     count++;
+    console.log(asset.browser_download_url);
     console.log(urls, count);
   });
   core.setOutput("urls", urls);
