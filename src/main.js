@@ -9,7 +9,7 @@ function run() {
   let urls = "";
   releaseInfo.release.assets.forEach(asset => {
     // Only get the name if it is a .exe or .dmg
-    if (matchingRegex && assets.name.match(matchingRegex)) return;
+    if (matchingRegex && asset.name.match(matchingRegex)) return;
     if (count > 0) {
       urls.concat(",");
     }
