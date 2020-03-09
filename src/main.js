@@ -12,8 +12,6 @@ function run() {
     }
     urls = `${urls}${asset.browser_download_url}`;
     count++;
-    console.log(asset.browser_download_url);
-    console.log(urls, count);
   });
   core.setOutput("urls", urls);
   core.setOutput("version", releaseInfo.release.name);
