@@ -56,9 +56,9 @@ function run() {
   let urls = "";
   releaseInfo.release.assets.forEach(asset => {
     if (count > 0) {
-      urls.concat(",");
+      urls = `${urls},`;
     }
-    urls.concat(asset.browser_download_url);
+    urls = `${urls}${asset.browser_download_url}`;
     count++;
     console.log(asset.browser_download_url);
     console.log(urls, count);
