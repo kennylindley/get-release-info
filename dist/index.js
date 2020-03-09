@@ -51,10 +51,11 @@ const fs = __webpack_require__(747);
 
 function run() {
   const releaseInfo = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
-  console.log(releaseInfo.release.assets);
+
   let count = 0;
   let urls = "";
   releaseInfo.release.assets.forEach(asset => {
+    console.log(asset);
     if (count > 0) {
       urls.concat(",");
     }
