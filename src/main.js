@@ -3,6 +3,7 @@ const fs = require("fs");
 
 function run() {
   const releaseInfo = JSON.parse(fs.readFileSync(process.env.GITHUB_EVENT_PATH, "utf8"));
+  console.log(releaseInfo.release.assets);
   let count = 0;
   let urls = "";
   releaseInfo.release.assets.forEach(asset => {
