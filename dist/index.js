@@ -59,6 +59,7 @@ function run() {
     }
     urls.concat(asset.browser_download_url);
     count++;
+    console.log(urls, count);
   });
   core.setOutput("urls", urls);
   core.setOutput("version", releaseInfo.release.name);
