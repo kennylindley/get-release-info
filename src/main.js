@@ -6,6 +6,7 @@ function run() {
 
   let count = 0;
   let urls = "";
+
   releaseInfo.release.assets.forEach(asset => {
     if (count > 0) {
       urls = `${urls},`;
@@ -16,5 +17,7 @@ function run() {
   core.setOutput("urls", urls);
   core.setOutput("version", releaseInfo.release.name);
 }
+
+exports.run = run;
 
 run();
